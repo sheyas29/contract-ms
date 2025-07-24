@@ -13,7 +13,8 @@ app.use(helmet());
 app.use(express.json());
 
 // tiny health check
-app.get('/api/v1/health', (_, res) => res.json({ ok: true }));
+app.get('/', (_, res) =>
+  res.send('Contract‑MS API ‑ try /api/v1/health for status'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀  API running on port ${PORT}`));
